@@ -10,9 +10,9 @@ void _prompt(void)
 
 /**
  * print_error - Display error based on command and loop count
- * @input: User input
+ * @input: the User input
  * @counter: Simple shell loop count
- * @argv: Program name
+ * @argv: the Program name
  *
  * Return: void
  */
