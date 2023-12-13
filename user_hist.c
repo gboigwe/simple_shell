@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * hist - Write user input to a file
  * @input: User input
@@ -8,53 +7,51 @@
  */
 int hist(char *input)
 {
-    char *filename = ".simple_shell_history";
-    ssize_t fd, w;
-    int len = 0;
+	char *filename = ".simple_shell_history";
+	ssize_t fd, w;
+	int len = 0;
 
-    if (!filename)
-        return (-1);
+	if (!filename)
+		return (-1);
 
-    fd = open(filename, O_CREAT | O_RDWR | O_APPEND, 00600);
-    if (fd < 0)
-    {
-        perror("open error");
-        return (-1);
-    }
+	fd = open(filename, O_CREAT | O_RDWR | O_APPEND, 00600);
+	if (fd < 0)
+	{
+		perror("open error");
+		return (-1);
+	}
 
-    if (input)
-    {
-        while (input[len])
-            len++;
+	if (input)
+	{
+		while (input[len])
+			len++;
 
-        w = write(fd, input, len);
-        if (w < 0)
-        {
-            perror("write error");
-            close(fd);
-            return (-1);
-        }
-    }
-
-    close(fd);
-    return (0);
+		w = write(fd, input, len);
+		if (w < 0)
+		{
+			perror("write error");
+			close(fd);
+			return (-1);
+		}
+	}
+	close(fd);
+	return (0);
 }
-
 /**
- * environ - Free environment variable array
+ * env_done - Free environment variable array
  * @env: Environment variables.
  *
  * Return: void
  */
-void environ(char **env)
+void env_done(char **env)
 {
-    int i;
+	int i;
 
-    for (i = 0; env[i]; i++)
-    {
-        free(env[i]);
-    }
+	for (i = 0; env[i]; i++)
+	{
+		free(env[i]);
+	}
 
-    /* Free the array itself */
-    free(env);
+	/* Free the array itself */
+	free(env);
 }
