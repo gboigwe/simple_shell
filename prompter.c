@@ -5,32 +5,32 @@
  */
 void _prompt(void)
 {
-    PRINTER("$ ");
+	PRINTER("$ ");
 }
 
 /**
  * print_error - Display error based on command and loop count
- * @input: the User input
+ * @input: User input
  * @counter: Simple shell loop count
- * @argv: the Program name
+ * @argv: Program name
  *
  * Return: void
  */
 void print_error(char *input, int counter, char **argv)
 {
-    char *er;
+	char *er;
 
-    PRINTER(argv[0]);
-    PRINTER(": ");
-    
-    er = _itoa(counter);
-    if (er)
-    {
-        PRINTER(er);
-        free(er);
-    }
+	PRINTER(argv[0]);
+	PRINTER(": ");
 
-    PRINTER(": ");
-    PRINTER(input);
-    PRINTER(": not found\n");
+	er = _itochar(counter);
+	if (er)
+	{
+		PRINTER(er);
+		free(er);
+	}
+
+	PRINTER(": ");
+	PRINTER(input);
+	PRINTER(": not found\n");
 }
