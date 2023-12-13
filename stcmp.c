@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * strcmp - Compares two strings
+ * _strcmp - Compares two strings
  * @str1: first srting of comparation
  * @str2: second string of comparatio
  *
